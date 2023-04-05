@@ -1,0 +1,1168 @@
+<script>
+
+	function mySelectType(typeName) {
+		console.log("Hi", typeName);
+		$(".last5perform").hide();
+		$(".Bat").hide();
+		$(".Bowl").hide();
+		$(".HomeAwayBowl").hide();
+		//alert(typeName.toUpperCase());
+		$('.comp_type').html('' + typeName);
+		var value = 0;
+		if (typeName === 'Test') {
+			value = 0;
+		} else if (typeName === 'ODI') {
+			value = 1;
+		} else if (typeName === 'T20I') {
+			value = 2;
+		} else if (typeName === 'IndianT20') {
+			value = 6;
+		} else {
+			value = 0;
+		}
+		$("."+value+"_last5perform").show();
+		$("."+value+"_Bat").show();
+		$("."+value+"_Bowl").show();
+		$("."+value+"_HomeAwayBowl").show();
+		
+	}
+</script>
+ 
+<!-- <style id="et-builder-googlefonts-cached-inline">/* Original: https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic|Coda:regular,800|Nova+Flat:regular&#038;subset=latin,latin-ext&#038;display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Coda';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/coda/v21/SLXHc1jY5nQ8FUsGbg.ttf) format('truetype');}@font-face {font-family: 'Coda';font-style: normal;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/coda/v21/SLXIc1jY5nQ8HeIgfpesxw.ttf) format('truetype');}@font-face {font-family: 'Nova Flat';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/novaflat/v24/QdVUSTc-JgqpytEbVeb0viFg.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOiCnqEu92Fr1Mu51QrEz4dKg.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 300;}</style> -->
+<link href="https://fonts.googleapis.com/css2?family=Nova+Flat&amp;display=swap" rel="stylesheet"> 
+
+<style id="et-builder-googlefonts-cached-inline">/* Original: https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic|Coda:regular,800|Nova+Flat:regular&#038;subset=latin,latin-ext&#038;display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Coda';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/coda/v21/SLXHc1jY5nQ8FUsGbg.ttf) format('truetype');}@font-face {font-family: 'Coda';font-style: normal;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/coda/v21/SLXIc1jY5nQ8HeIgfpesxw.ttf) format('truetype');}@font-face {font-family: 'Nova Flat';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/novaflat/v24/QdVUSTc-JgqpytEbVeb0viFg.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOiCnqEu92Fr1Mu51QrEz4dKg.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TjASc0CsE.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu51xGIzc.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51S7ACc0CsE.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TzBic0CsE.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TLBCc0CsE.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1MmgVxGIzc.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fChc9.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7GxP.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fChc9.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfChc9.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtfChc9.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Coda';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/coda/v21/SLXHc1jY5nQ8FUsGbQ.woff) format('woff');}@font-face {font-family: 'Coda';font-style: normal;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/coda/v21/SLXIc1jY5nQ8HeIgfpesxA.woff) format('woff');}@font-face {font-family: 'Nova Flat';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/novaflat/v24/QdVUSTc-JgqpytEbVeb0viFj.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOiCnqEu92Fr1Mu51QrEz4dKQ.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TjASc0CsI.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu51xGIzQ.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51S7ACc0CsI.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TzBic0CsI.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TLBCc0CsI.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1MmgVxGIzQ.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fChc-.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7GxM.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fChc-.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfChc-.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtfChc-.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Coda';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/coda/v21/SLXHc1jY5nQ8FUsGaw.woff2) format('woff2');}@font-face {font-family: 'Coda';font-style: normal;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/coda/v21/SLXIc1jY5nQ8HeIgfpeswg.woff2) format('woff2');}@font-face {font-family: 'Nova Flat';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/novaflat/v24/QdVUSTc-JgqpytEbVeb0viFl.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOiCnqEu92Fr1Mu51QrEz4dLw.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TjASc0CsQ.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu51xGIzI.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51S7ACc0CsQ.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TzBic0CsQ.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TLBCc0CsQ.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1MmgVxGIzI.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fChc4.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7GxK.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fChc4.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfChc4.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtfChc4.woff2) format('woff2');}</style>
+
+
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#">
+
+<!-- Mirrored from www.my11circle.com/fantasy-sports/players/janneman-malan/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Apr 2023 17:22:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="pingback" href="../../xmlrpc.php" />
+
+	<script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin /><script type="text/javascript">
+			let jqueryParams=[],jQuery=function(r){return jqueryParams=[...jqueryParams,r],jQuery},$=function(r){return jqueryParams=[...jqueryParams,r],$};window.jQuery=jQuery,window.$=jQuery;let customHeadScripts=!1;jQuery.fn=jQuery.prototype={},$.fn=jQuery.prototype={},jQuery.noConflict=function(r){if(window.jQuery)return jQuery=window.jQuery,$=window.jQuery,customHeadScripts=!0,jQuery.noConflict},jQuery.ready=function(r){jqueryParams=[...jqueryParams,r]},$.ready=function(r){jqueryParams=[...jqueryParams,r]},jQuery.load=function(r){jqueryParams=[...jqueryParams,r]},$.load=function(r){jqueryParams=[...jqueryParams,r]},jQuery.fn.ready=function(r){jqueryParams=[...jqueryParams,r]},$.fn.ready=function(r){jqueryParams=[...jqueryParams,r]};</script>
+<!-- Search Engine Optimization by Rank Math - https://s.rankmath.com/home -->
+<title>Janneman Malan Profile: Stats, Records, Averages &amp; Career Details - My11Circle</title>
+<meta name="description" content="Get Janneman Malan’s ODI, Test, T20 stats, records, averages, and career details on My11Circle. Make your team now!"/>
+<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Janneman Malan Profile: Stats, Records, Averages &amp; Career Details - My11Circle" />
+<meta property="og:description" content="Get Janneman Malan’s ODI, Test, T20 stats, records, averages, and career details on My11Circle. Make your team now!" />
+<meta property="og:url" content="https://www.my11circle.com/fantasy-sports/players/janneman-malan/" />
+<meta property="og:site_name" content="My11Circle" />
+<meta property="og:updated_time" content="2022-10-04T14:22:38+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Janneman Malan Profile: Stats, Records, Averages &amp; Career Details - My11Circle" />
+<meta name="twitter:description" content="Get Janneman Malan’s ODI, Test, T20 stats, records, averages, and career details on My11Circle. Make your team now!" />
+<meta name="twitter:label1" content="Time to read" />
+<meta name="twitter:data1" content="Less than a minute" />
+<!-- /Rank Math WordPress SEO plugin -->
+
+<link rel='dns-prefetch' href='../../../index.html' />
+<link rel="alternate" type="application/rss+xml" title="My11Circle &raquo; Feed" href="../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="My11Circle &raquo; Comments Feed" href="../../comments/feed/index.html" />
+<meta content="Divi v.4.14.5" name="generator"/><link rel='stylesheet' id='wpdt-divi-css'  href='../../wp-content/plugins/wpdatatables/integrations/page_builders/divi-wpdt/styles/divi-wpdtf5cd.css?ver=2.1.41' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='../../wp-includes/css/dist/block-library/style.min6281.css?ver=5.8.6' type='text/css' media='all' />
+<link rel='stylesheet' id='responsive-slick-slider-css'  href='../../wp-content/plugins/responsive-slick-slider/public/css/responsive-slick-slider-public7359.css?ver=1.2.0' type='text/css' media='all' />
+<link rel='stylesheet' id='slick-css'  href='../../wp-content/plugins/responsive-slick-slider/public/css/slick7359.css?ver=1.2.0' type='text/css' media='all' />
+<style id='divi-style-inline-inline-css' type='text/css'>
+/*!
+Theme Name: Divi
+Theme URI: http://www.elegantthemes.com/gallery/divi/
+Version: 4.14.5
+Description: Smart. Flexible. Beautiful. Divi is the most powerful theme in our collection.
+Author: Elegant Themes
+Author URI: http://www.elegantthemes.com
+License: GNU General Public License v2
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+a,abbr,acronym,address,applet,b,big,blockquote,body,center,cite,code,dd,del,dfn,div,dl,dt,em,fieldset,font,form,h1,h2,h3,h4,h5,h6,html,i,iframe,img,ins,kbd,label,legend,li,object,ol,p,pre,q,s,samp,small,span,strike,strong,sub,sup,tt,u,ul,var{margin:0;padding:0;border:0;outline:0;font-size:100%;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}blockquote{margin:20px 0 30px;border-left:5px solid;padding-left:20px}:focus{outline:0}del{text-decoration:line-through}pre{overflow:auto;padding:10px}figure{margin:0}table{border-collapse:collapse;border-spacing:0}article,aside,footer,header,hgroup,nav,section{display:block}body{font-family:Open Sans,Arial,sans-serif;font-size:14px;color:#666;background-color:#fff;line-height:1.7em;font-weight:500;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}body.page-template-page-template-blank-php #page-container{padding-top:0!important}body.et_cover_background{background-size:cover!important;background-position:top!important;background-repeat:no-repeat!important;background-attachment:fixed}a{color:#2ea3f2}a,a:hover{text-decoration:none}p{padding-bottom:1em}p:not(.has-background):last-of-type{padding-bottom:0}p.et_normal_padding{padding-bottom:1em}strong{font-weight:700}cite,em,i{font-style:italic}code,pre{font-family:Courier New,monospace;margin-bottom:10px}ins{text-decoration:none}sub,sup{height:0;line-height:1;position:relative;vertical-align:baseline}sup{bottom:.8em}sub{top:.3em}dl{margin:0 0 1.5em}dl dt{font-weight:700}dd{margin-left:1.5em}blockquote p{padding-bottom:0}embed,iframe,object,video{max-width:100%}h1,h2,h3,h4,h5,h6{color:#333;padding-bottom:10px;line-height:1em;font-weight:500}h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:inherit}h1{font-size:30px}h2{font-size:26px}h3{font-size:22px}h4{font-size:18px}h5{font-size:16px}h6{font-size:14px}input{-webkit-appearance:none}input[type=checkbox]{-webkit-appearance:checkbox}input[type=radio]{-webkit-appearance:radio}input.text,input.title,input[type=email],input[type=password],input[type=tel],input[type=text],select,textarea{background-color:#fff;border:1px solid #bbb;padding:2px;color:#4e4e4e}input.text:focus,input.title:focus,input[type=text]:focus,select:focus,textarea:focus{border-color:#2d3940;color:#3e3e3e}input.text,input.title,input[type=text],select,textarea{margin:0}textarea{padding:4px}button,input,select,textarea{font-family:inherit}img{max-width:100%;height:auto}.clear{clear:both}br.clear{margin:0;padding:0}.pagination{clear:both}#et_search_icon:hover,.et-social-icon a:hover,.et_password_protected_form .et_submit_button,.form-submit .et_pb_buttontton.alt.disabled,.nav-single a,.posted_in a{color:#2ea3f2}.et-search-form,blockquote{border-color:#2ea3f2}#main-content{background-color:#fff}.container{width:80%;max-width:1080px;margin:auto;position:relative}body:not(.et-tb) #main-content .container,body:not(.et-tb-has-header) #main-content .container{padding-top:58px}.et_full_width_page #main-content .container:before{display:none}.main_title{margin-bottom:20px}.et_password_protected_form .et_submit_button:hover,.form-submit .et_pb_button:hover{background:rgba(0,0,0,.05)}.et_button_icon_visible .et_pb_button{padding-right:2em;padding-left:.7em}.et_button_icon_visible .et_pb_button:after{opacity:1;margin-left:0}.et_button_left .et_pb_button:hover:after{left:.15em}.et_button_left .et_pb_button:after{margin-left:0;left:1em}.et_button_icon_visible.et_button_left .et_pb_button,.et_button_left .et_pb_button:hover,.et_button_left .et_pb_module .et_pb_button:hover{padding-left:2em;padding-right:.7em}.et_button_icon_visible.et_button_left .et_pb_button:after,.et_button_left .et_pb_button:hover:after{left:.15em}.et_password_protected_form .et_submit_button:hover,.form-submit .et_pb_button:hover{padding:.3em 1em}.et_button_no_icon .et_pb_button:after{display:none}.et_button_no_icon.et_button_icon_visible.et_button_left .et_pb_button,.et_button_no_icon.et_button_left .et_pb_button:hover,.et_button_no_icon .et_pb_button,.et_button_no_icon .et_pb_button:hover{padding:.3em 1em!important}.et_button_custom_icon .et_pb_button:after{line-height:1.7em}.et_button_custom_icon.et_button_icon_visible .et_pb_button:after,.et_button_custom_icon .et_pb_button:hover:after{margin-left:.3em}#left-area .post_format-post-format-gallery .wp-block-gallery:first-of-type{padding:0;margin-bottom:-16px}.entry-content table:not(.variations){border:1px solid #eee;margin:0 0 15px;text-align:left;width:100%}.entry-content thead th,.entry-content tr th{color:#555;font-weight:700;padding:9px 24px}.entry-content tr td{border-top:1px solid #eee;padding:6px 24px}#left-area ul,.entry-content ul,.et-l--body ul,.et-l--footer ul,.et-l--header ul{list-style-type:disc;padding:0 0 23px 1em;line-height:26px}#left-area ol,.entry-content ol,.et-l--body ol,.et-l--footer ol,.et-l--header ol{list-style-type:decimal;list-style-position:inside;padding:0 0 23px;line-height:26px}#left-area ul li ul,.entry-content ul li ol{padding:2px 0 2px 20px}#left-area ol li ul,.entry-content ol li ol,.et-l--body ol li ol,.et-l--footer ol li ol,.et-l--header ol li ol{padding:2px 0 2px 35px}#left-area ul.wp-block-gallery{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;list-style-type:none;padding:0}#left-area ul.products{padding:0!important;line-height:1.7!important;list-style:none!important}.gallery-item a{display:block}.gallery-caption,.gallery-item a{width:90%}#wpadminbar{z-index:100001}#left-area .post-meta{font-size:14px;padding-bottom:15px}#left-area .post-meta a{text-decoration:none;color:#666}#left-area .et_featured_image{padding-bottom:7px}.single .post{padding-bottom:25px}body.single .et_audio_content{margin-bottom:-6px}.nav-single a{text-decoration:none;color:#2ea3f2;font-size:14px;font-weight:400}.nav-previous{float:left}.nav-next{float:right}.et_password_protected_form p input{background-color:#eee;border:none!important;width:100%!important;border-radius:0!important;font-size:14px;color:#999!important;padding:16px!important;-webkit-box-sizing:border-box;box-sizing:border-box}.et_password_protected_form label{display:none}.et_password_protected_form .et_submit_button{font-family:inherit;display:block;float:right;margin:8px auto 0;cursor:pointer}.post-password-required p.nocomments.container{max-width:100%}.post-password-required p.nocomments.container:before{display:none}.aligncenter,div.post .new-post .aligncenter{display:block;margin-left:auto;margin-right:auto}.wp-caption{border:1px solid #ddd;text-align:center;background-color:#f3f3f3;margin-bottom:10px;max-width:96%;padding:8px}.wp-caption.alignleft{margin:0 30px 20px 0}.wp-caption.alignright{margin:0 0 20px 30px}.wp-caption img{margin:0;padding:0;border:0}.wp-caption p.wp-caption-text{font-size:12px;padding:0 4px 5px;margin:0}.alignright{float:right}.alignleft{float:left}img.alignleft{display:inline;float:left;margin-right:15px}img.alignright{display:inline;float:right;margin-left:15px}.page.et_pb_pagebuilder_layout #main-content{background-color:transparent}body #main-content .et_builder_inner_content>h1,body #main-content .et_builder_inner_content>h2,body #main-content .et_builder_inner_content>h3,body #main-content .et_builder_inner_content>h4,body #main-content .et_builder_inner_content>h5,body #main-content .et_builder_inner_content>h6{line-height:1.4em}body #main-content .et_builder_inner_content>p{line-height:1.7em}.wp-block-pullquote{margin:20px 0 30px}.wp-block-pullquote.has-background blockquote{border-left:none}.wp-block-group.has-background{padding:1.5em 1.5em .5em}@media (min-width:981px){#left-area{width:79.125%;padding-bottom:23px}#main-content .container:before{content:"";position:absolute;top:0;height:100%;width:1px;background-color:#e2e2e2}.et_full_width_page #left-area,.et_no_sidebar #left-area{float:none;width:100%!important}.et_full_width_page #left-area{padding-bottom:0}.et_no_sidebar #main-content .container:before{display:none}}@media (max-width:980px){#page-container{padding-top:80px}.et-tb #page-container,.et-tb-has-header #page-container{padding-top:0!important}#left-area,#sidebar{width:100%!important}#main-content .container:before{display:none!important}.et_full_width_page .et_gallery_item:nth-child(4n+1){clear:none}}@media print{#page-container{padding-top:0!important}}#wp-admin-bar-et-use-visual-builder a:before{font-family:ETmodules!important;content:"\e625";font-size:30px!important;width:28px;margin-top:-3px;color:#974df3!important}#wp-admin-bar-et-use-visual-builder:hover a:before{color:#fff!important}#wp-admin-bar-et-use-visual-builder:hover a,#wp-admin-bar-et-use-visual-builder a:hover{transition:background-color .5s ease;-webkit-transition:background-color .5s ease;-moz-transition:background-color .5s ease;background-color:#7e3bd0!important;color:#fff!important}* html .clearfix,:first-child+html .clearfix{zoom:1}.iphone .et_pb_section_video_bg video::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none}.et_mobile_device .et_pb_section_parallax .et_pb_parallax_css{background-attachment:scroll}.et-social-facebook a.icon:before{content:"\e093"}.et-social-twitter a.icon:before{content:"\e094"}.et-social-google-plus a.icon:before{content:"\e096"}.et-social-instagram a.icon:before{content:"\e09a"}.et-social-rss a.icon:before{content:"\e09e"}.ai1ec-single-event:after{content:" ";display:table;clear:both}.evcal_event_details .evcal_evdata_cell .eventon_details_shading_bot.eventon_details_shading_bot{z-index:3}.wp-block-divi-layout{margin-bottom:1em}*{-webkit-box-sizing:border-box;box-sizing:border-box}#et-info-email:before,#et-info-phone:before,#et_search_icon:before,.comment-reply-link:after,.et-cart-info span:before,.et-pb-arrow-next:before,.et-pb-arrow-prev:before,.et-social-icon a:before,.et_audio_container .mejs-playpause-button button:before,.et_audio_container .mejs-volume-button button:before,.et_overlay:before,.et_password_protected_form .et_submit_button:after,.et_pb_button:after,.et_pb_contact_reset:after,.et_pb_contact_submit:after,.et_pb_font_icon:before,.et_pb_newsletter_button:after,.et_pb_pricing_table_button:after,.et_pb_promo_button:after,.et_pb_testimonial:before,.et_pb_toggle_title:before,.form-submit .et_pb_button:after,.mobile_menu_bar:before,a.et_pb_more_button:after{font-family:ETmodules!important;speak:none;font-style:normal;font-weight:400;-webkit-font-feature-settings:normal;font-feature-settings:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-shadow:0 0;direction:ltr}.et-pb-icon,.et_pb_custom_button_icon.et_pb_button:after,.et_pb_login .et_pb_custom_button_icon.et_pb_button:after,.et_pb_woo_custom_button_icon .button.et_pb_custom_button_icon.et_pb_button:after,.et_pb_woo_custom_button_icon .button.et_pb_custom_button_icon.et_pb_button:hover:after{content:attr(data-icon)}.et-pb-icon{font-family:ETmodules;speak:none;font-weight:400;-webkit-font-feature-settings:normal;font-feature-settings:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;font-size:96px;font-style:normal;display:inline-block;-webkit-box-sizing:border-box;box-sizing:border-box;direction:ltr}#et-ajax-saving{display:none;-webkit-transition:background .3s,-webkit-box-shadow .3s;transition:background .3s,-webkit-box-shadow .3s;transition:background .3s,box-shadow .3s;transition:background .3s,box-shadow .3s,-webkit-box-shadow .3s;-webkit-box-shadow:rgba(0,139,219,.247059) 0 0 60px;box-shadow:0 0 60px rgba(0,139,219,.247059);position:fixed;top:50%;left:50%;width:50px;height:50px;background:#fff;border-radius:50px;margin:-25px 0 0 -25px;z-index:999999;text-align:center}#et-ajax-saving img{margin:9px}.et-safe-mode-indicator,.et-safe-mode-indicator:focus,.et-safe-mode-indicator:hover{-webkit-box-shadow:0 5px 10px rgba(41,196,169,.15);box-shadow:0 5px 10px rgba(41,196,169,.15);background:#29c4a9;color:#fff;font-size:14px;font-weight:600;padding:12px;line-height:16px;border-radius:3px;position:fixed;bottom:30px;right:30px;z-index:999999;text-decoration:none;font-family:Open Sans,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.et_pb_button{font-size:20px;font-weight:500;padding:.3em 1em;line-height:1.7em!important;background-color:transparent;background-size:cover;background-position:50%;background-repeat:no-repeat;border:2px solid;border-radius:3px;-webkit-transition-duration:.2s;transition-duration:.2s;-webkit-transition-property:all!important;transition-property:all!important}.et_pb_button,.et_pb_button_inner{position:relative}.et_pb_button:hover,.et_pb_module .et_pb_button:hover{border:2px solid transparent;padding:.3em 2em .3em .7em}.et_pb_button:hover{background-color:hsla(0,0%,100%,.2)}.et_pb_bg_layout_light.et_pb_button:hover,.et_pb_bg_layout_light .et_pb_button:hover{background-color:rgba(0,0,0,.05)}.et_pb_button:after,.et_pb_button:before{font-size:32px;line-height:1em;content:"\35";opacity:0;position:absolute;margin-left:-1em;-webkit-transition:all .2s;transition:all .2s;text-transform:none;-webkit-font-feature-settings:"kern" off;font-feature-settings:"kern" off;font-variant:none;font-style:normal;font-weight:400;text-shadow:none}.et_pb_button.et_hover_enabled:hover:after,.et_pb_button.et_pb_hovered:hover:after{-webkit-transition:none!important;transition:none!important}.et_pb_button:before{display:none}.et_pb_button:hover:after{opacity:1;margin-left:0}.et_pb_column_1_3 h1,.et_pb_column_1_4 h1,.et_pb_column_1_5 h1,.et_pb_column_1_6 h1,.et_pb_column_2_5 h1{font-size:26px}.et_pb_column_1_3 h2,.et_pb_column_1_4 h2,.et_pb_column_1_5 h2,.et_pb_column_1_6 h2,.et_pb_column_2_5 h2{font-size:23px}.et_pb_column_1_3 h3,.et_pb_column_1_4 h3,.et_pb_column_1_5 h3,.et_pb_column_1_6 h3,.et_pb_column_2_5 h3{font-size:20px}.et_pb_column_1_3 h4,.et_pb_column_1_4 h4,.et_pb_column_1_5 h4,.et_pb_column_1_6 h4,.et_pb_column_2_5 h4{font-size:18px}.et_pb_column_1_3 h5,.et_pb_column_1_4 h5,.et_pb_column_1_5 h5,.et_pb_column_1_6 h5,.et_pb_column_2_5 h5{font-size:16px}.et_pb_column_1_3 h6,.et_pb_column_1_4 h6,.et_pb_column_1_5 h6,.et_pb_column_1_6 h6,.et_pb_column_2_5 h6{font-size:15px}.et_pb_bg_layout_dark,.et_pb_bg_layout_dark h1,.et_pb_bg_layout_dark h2,.et_pb_bg_layout_dark h3,.et_pb_bg_layout_dark h4,.et_pb_bg_layout_dark h5,.et_pb_bg_layout_dark h6{color:#fff!important}.et_pb_module.et_pb_text_align_left{text-align:left}.et_pb_module.et_pb_text_align_center{text-align:center}.et_pb_module.et_pb_text_align_right{text-align:right}.et_pb_module.et_pb_text_align_justified{text-align:justify}.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}.et_pb_bg_layout_light .et_pb_more_button{color:#2ea3f2}.et_builder_inner_content{position:relative;z-index:1}header .et_builder_inner_content{z-index:2}.et_pb_css_mix_blend_mode_passthrough{mix-blend-mode:unset!important}.et_pb_image_container{margin:-20px -20px 29px}.et_pb_module_inner{position:relative}.et_hover_enabled_preview{z-index:2}.et_hover_enabled:hover{position:relative;z-index:2}.et_pb_all_tabs,.et_pb_module,.et_pb_posts_nav a,.et_pb_tab,.et_pb_with_background{background-size:cover;background-position:50%;background-repeat:no-repeat}.et_pb_with_border{position:relative;border:0 solid #333}.post-password-required .et_pb_row{padding:0;width:100%}.post-password-required .et_password_protected_form{min-height:0}body.et_pb_pagebuilder_layout.et_pb_show_title .post-password-required .et_password_protected_form h1,body:not(.et_pb_pagebuilder_layout) .post-password-required .et_password_protected_form h1{display:none}.et_pb_no_bg{padding:0!important}.et_overlay.et_pb_inline_icon:before,.et_pb_inline_icon:before{content:attr(data-icon)}.et_pb_more_button{color:inherit;text-shadow:none;text-decoration:none;display:inline-block;margin-top:20px}.et_parallax_bg_wrap{overflow:hidden;position:absolute;top:0;right:0;bottom:0;left:0}.et_parallax_bg{background-repeat:no-repeat;background-position:top;background-size:cover;position:absolute;bottom:0;left:0;width:100%;height:100%;display:block}.et_parallax_bg.et_parallax_bg__hover,.et_parallax_bg.et_parallax_bg_phone,.et_parallax_bg.et_parallax_bg_tablet,.et_pb_section_parallax_hover:hover .et_parallax_bg:not(.et_parallax_bg__hover){display:none}.et_pb_section_parallax_hover:hover .et_parallax_bg.et_parallax_bg__hover{display:block}.et_pb_module.et_pb_section_parallax,.et_pb_posts_nav a.et_pb_section_parallax,.et_pb_tab.et_pb_section_parallax{position:relative}.et_pb_section_parallax .et_pb_parallax_css,.et_pb_slides .et_parallax_bg.et_pb_parallax_css{background-attachment:fixed}body.et-bfb .et_pb_section_parallax .et_pb_parallax_css,body.et-bfb .et_pb_slides .et_parallax_bg.et_pb_parallax_css{background-attachment:scroll;bottom:auto}.et_pb_section_parallax.et_pb_column .et_pb_module,.et_pb_section_parallax.et_pb_row .et_pb_column,.et_pb_section_parallax.et_pb_row .et_pb_module{z-index:9;position:relative}.et_pb_more_button:hover:after{opacity:1;margin-left:0}.et_pb_preload .et_pb_section_video_bg,.et_pb_preload>div{visibility:hidden}.et_pb_preload,.et_pb_section.et_pb_section_video.et_pb_preload{position:relative;background:#464646!important}.et_pb_preload:before{content:"";position:absolute;top:50%;left:50%;background:url(../../wp-content/themes/Divi/includes/builder/styles/images/preloader.gif) no-repeat;border-radius:32px;width:32px;height:32px;margin:-16px 0 0 -16px}.box-shadow-overlay{position:absolute;top:0;left:0;width:100%;height:100%;z-index:10;pointer-events:none}.et_pb_section>.box-shadow-overlay~.et_pb_row{z-index:11}.et_pb_row>.box-shadow-overlay{z-index:8}.has-box-shadow-overlay{position:relative}.et_clickable{cursor:pointer}.screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute!important;width:1px;word-wrap:normal!important}.et_multi_view_hidden,.et_multi_view_hidden_image{display:none!important}@keyframes multi-view-image-fade{0%{opacity:0}10%{opacity:.1}20%{opacity:.2}30%{opacity:.3}40%{opacity:.4}50%{opacity:.5}60%{opacity:.6}70%{opacity:.7}80%{opacity:.8}90%{opacity:.9}to{opacity:1}}.et_multi_view_image__loading{visibility:hidden}.et_multi_view_image__loaded{-webkit-animation:multi-view-image-fade .5s;animation:multi-view-image-fade .5s}#et-pb-motion-effects-offset-tracker{visibility:hidden!important;opacity:0;position:absolute;top:0;left:0}.et-pb-before-scroll-animation{opacity:0}header.et-l.et-l--header:after{clear:both;display:block;content:""}.et_pb_module{-webkit-animation-timing-function:linear;animation-timing-function:linear;-webkit-animation-duration:.2s;animation-duration:.2s}@-webkit-keyframes fadeBottom{0%{opacity:0;-webkit-transform:translateY(10%);transform:translateY(10%)}to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes fadeBottom{0%{opacity:0;-webkit-transform:translateY(10%);transform:translateY(10%)}to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}@-webkit-keyframes fadeLeft{0%{opacity:0;-webkit-transform:translateX(-10%);transform:translateX(-10%)}to{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}}@keyframes fadeLeft{0%{opacity:0;-webkit-transform:translateX(-10%);transform:translateX(-10%)}to{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}}@-webkit-keyframes fadeRight{0%{opacity:0;-webkit-transform:translateX(10%);transform:translateX(10%)}to{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}}@keyframes fadeRight{0%{opacity:0;-webkit-transform:translateX(10%);transform:translateX(10%)}to{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}}@-webkit-keyframes fadeTop{0%{opacity:0;-webkit-transform:translateY(-10%);transform:translateY(-10%)}to{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}}@keyframes fadeTop{0%{opacity:0;-webkit-transform:translateY(-10%);transform:translateY(-10%)}to{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}}@-webkit-keyframes fadeIn{0%{opacity:0}to{opacity:1}}@keyframes fadeIn{0%{opacity:0}to{opacity:1}}.et-waypoint:not(.et_pb_counters){opacity:0}@media (min-width:981px){.et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_pb_column .et_pb_module.et-last-child,.et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_pb_column .et_pb_module:last-child,.et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_pb_row_inner .et_pb_column .et_pb_module.et-last-child,.et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_pb_row_inner .et_pb_column .et_pb_module:last-child,.et_pb_section div.et_pb_row .et_pb_column .et_pb_module.et-last-child,.et_pb_section div.et_pb_row .et_pb_column .et_pb_module:last-child{margin-bottom:0}}@media (max-width:980px){.et_overlay.et_pb_inline_icon_tablet:before,.et_pb_inline_icon_tablet:before{content:attr(data-icon-tablet)}.et_parallax_bg.et_parallax_bg_tablet_exist{display:none}.et_parallax_bg.et_parallax_bg_tablet{display:block}.et_pb_column .et_pb_module{margin-bottom:30px}.et_pb_row .et_pb_column .et_pb_module.et-last-child,.et_pb_row .et_pb_column .et_pb_module:last-child,.et_section_specialty .et_pb_row .et_pb_column .et_pb_module.et-last-child,.et_section_specialty .et_pb_row .et_pb_column .et_pb_module:last-child{margin-bottom:0}.et_pb_more_button{display:inline-block!important}.et_pb_bg_layout_light_tablet.et_pb_button,.et_pb_bg_layout_light_tablet.et_pb_module.et_pb_button,.et_pb_bg_layout_light_tablet .et_pb_more_button{color:#2ea3f2}.et_pb_bg_layout_light_tablet .et_pb_forgot_password a{color:#666}.et_pb_bg_layout_light_tablet h1,.et_pb_bg_layout_light_tablet h2,.et_pb_bg_layout_light_tablet h3,.et_pb_bg_layout_light_tablet h4,.et_pb_bg_layout_light_tablet h5,.et_pb_bg_layout_light_tablet h6{color:#333!important}.et_pb_module .et_pb_bg_layout_light_tablet.et_pb_button{color:#2ea3f2!important}.et_pb_bg_layout_light_tablet{color:#666!important}.et_pb_bg_layout_dark_tablet,.et_pb_bg_layout_dark_tablet h1,.et_pb_bg_layout_dark_tablet h2,.et_pb_bg_layout_dark_tablet h3,.et_pb_bg_layout_dark_tablet h4,.et_pb_bg_layout_dark_tablet h5,.et_pb_bg_layout_dark_tablet h6{color:#fff!important}.et_pb_bg_layout_dark_tablet.et_pb_button,.et_pb_bg_layout_dark_tablet.et_pb_module.et_pb_button,.et_pb_bg_layout_dark_tablet .et_pb_more_button{color:inherit}.et_pb_bg_layout_dark_tablet .et_pb_forgot_password a{color:#fff}.et_pb_module.et_pb_text_align_left-tablet{text-align:left}.et_pb_module.et_pb_text_align_center-tablet{text-align:center}.et_pb_module.et_pb_text_align_right-tablet{text-align:right}.et_pb_module.et_pb_text_align_justified-tablet{text-align:justify}}@media (max-width:767px){.et_pb_more_button{display:inline-block!important}.et_overlay.et_pb_inline_icon_phone:before,.et_pb_inline_icon_phone:before{content:attr(data-icon-phone)}.et_parallax_bg.et_parallax_bg_phone_exist{display:none}.et_parallax_bg.et_parallax_bg_phone{display:block}.et-hide-mobile{display:none!important}.et_pb_bg_layout_light_phone.et_pb_button,.et_pb_bg_layout_light_phone.et_pb_module.et_pb_button,.et_pb_bg_layout_light_phone .et_pb_more_button{color:#2ea3f2}.et_pb_bg_layout_light_phone .et_pb_forgot_password a{color:#666}.et_pb_bg_layout_light_phone h1,.et_pb_bg_layout_light_phone h2,.et_pb_bg_layout_light_phone h3,.et_pb_bg_layout_light_phone h4,.et_pb_bg_layout_light_phone h5,.et_pb_bg_layout_light_phone h6{color:#333!important}.et_pb_module .et_pb_bg_layout_light_phone.et_pb_button{color:#2ea3f2!important}.et_pb_bg_layout_light_phone{color:#666!important}.et_pb_bg_layout_dark_phone,.et_pb_bg_layout_dark_phone h1,.et_pb_bg_layout_dark_phone h2,.et_pb_bg_layout_dark_phone h3,.et_pb_bg_layout_dark_phone h4,.et_pb_bg_layout_dark_phone h5,.et_pb_bg_layout_dark_phone h6{color:#fff!important}.et_pb_bg_layout_dark_phone.et_pb_button,.et_pb_bg_layout_dark_phone.et_pb_module.et_pb_button,.et_pb_bg_layout_dark_phone .et_pb_more_button{color:inherit}.et_pb_module .et_pb_bg_layout_dark_phone.et_pb_button{color:#fff!important}.et_pb_bg_layout_dark_phone .et_pb_forgot_password a{color:#fff}.et_pb_module.et_pb_text_align_left-phone{text-align:left}.et_pb_module.et_pb_text_align_center-phone{text-align:center}.et_pb_module.et_pb_text_align_right-phone{text-align:right}.et_pb_module.et_pb_text_align_justified-phone{text-align:justify}}@media (max-width:479px){a.et_pb_more_button{display:block}}@media (min-width:768px) and (max-width:980px){[data-et-multi-view-load-tablet-hidden=true]:not(.et_multi_view_swapped){display:none!important}}@media (max-width:767px){[data-et-multi-view-load-phone-hidden=true]:not(.et_multi_view_swapped){display:none!important}}.et_pb_menu.et_pb_menu--style-inline_centered_logo .et_pb_menu__menu nav ul{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}@-webkit-keyframes multi-view-image-fade{0%{-webkit-transform:scale(1);transform:scale(1);opacity:1}50%{-webkit-transform:scale(1.01);transform:scale(1.01);opacity:1}to{-webkit-transform:scale(1);transform:scale(1);opacity:1}}
+</style>
+<link rel='stylesheet' id='divi-dynamic-css'  href='../../wp-content/et-cache/6713/et-divi-dynamic-6713662f.css?ver=1680627588' type='text/css' media='all' />
+<link rel='stylesheet' id='extension-styles-css'  href='../../wp-content/plugins/schema-and-structured-data-for-wp/modules/divi-builder/styles/style.min8a54.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-wpdt-styles-css'  href='../../wp-content/plugins/wpdatatables/integrations/page_builders/divi-wpdt/styles/style.min8a54.css?ver=1.0.0' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery.minaf6c.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' id='jquery-js-after'>
+jqueryParams.length&&$.each(jqueryParams,function(e,r){if("function"==typeof r){var n=String(r);n.replace("$","jQuery");var a=new Function("return "+n)();$(document).ready(a)}});
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/responsive-slick-slider/public/js/responsive-slick-slider-public7359.js?ver=1.2.0' id='responsive-slick-slider-js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/responsive-slick-slider/public/js/slick.min7359.js?ver=1.2.0' id='slick-js'></script>
+<link rel="https://api.w.org/" href="../../wp-json/index.html" /><link rel="alternate" type="application/json" href="../../wp-json/wp/v2/pages/6713.json" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8.6" />
+<link rel='shortlink' href='../../indexbedf.html?p=6713' />
+<link rel="alternate" type="application/json+oembed" href="../../wp-json/oembed/1.0/embed5fd6.json?url=https%3A%2F%2Fwww.my11circle.com%2Ffantasy-sports%2Fplayers%2Fjanneman-malan%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../wp-json/oembed/1.0/embedd1ed?url=https%3A%2F%2Fwww.my11circle.com%2Ffantasy-sports%2Fplayers%2Fjanneman-malan%2F&amp;format=xml" />
+
+		<!-- GA Google Analytics @ https://m0n.co/ga -->
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-3610156-25', 'auto');
+			ga('send', 'pageview');
+		</script>
+
+	<script src="https://www.youtube.com/iframe_api"></script><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+<script type="application/ld+json" class="saswp-schema-markup-output">
+[{"@context":"https://schema.org"}]
+</script>
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #f0f0f0; }
+</style>
+	<link rel="icon" href="../../wp-content/uploads/2021/08/cropped-logo-32x32.png" sizes="32x32" />
+<link rel="icon" href="../../wp-content/uploads/2021/08/cropped-logo-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="../../wp-content/uploads/2021/08/cropped-logo-180x180.png" />
+<meta name="msapplication-TileImage" content="https://www.my11circle.com/fantasy-sports/wp-content/uploads/2021/08/cropped-logo-270x270.png" />
+<link rel="stylesheet" id="et-divi-customizer-global-cached-inline-styles" href="../../wp-content/et-cache/global/et-divi-customizer-global.min03b4.css?ver=1680596695" /></head>
+<body class="page-template page-template-template-player page-template-template-player-php page page-id-6713 page-child parent-pageid-5698 custom-background wp-custom-logo et_button_custom_icon et_pb_button_helper_class et_fullwidth_nav et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_header_style_left et_pb_footer_columns4 et_cover_background et_pb_gutter windows et_pb_gutters3 et_right_sidebar et_divi_theme et-db elementor-default elementor-kit-38">
+	<div id="page-container">
+
+	
+	
+			<header id="main-header" data-height-onload="65">
+			<div class="container clearfix et_menu_container">
+							<div class="logo_container">
+					<span class="logo_helper"></span>
+					<a href="../../index.html">
+						<img src="../../wp-content/uploads/2022/09/MEC-logo.png" width="251" height="48" alt="My11Circle" id="logo" data-height-percentage="72" />
+					</a>
+				</div>
+							<div id="et-top-navigation" data-height="65" data-fixed-height="65">
+											<nav id="top-menu-nav">
+						<ul id="top-menu" class="nav"><li id="menu-item-7253" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7253"><a href="../../tournaments/indian-t20-league/index.html">Indian T20 League</a></li>
+<li id="menu-item-4160" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4160"><a href="../../upcoming-matches/index.html">Upcoming Matches</a></li>
+<li id="menu-item-3827" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3827"><a href="../../cricket-teams/index.html">Cricket Teams</a></li>
+<li id="menu-item-3846" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3846"><a href="../../../blog/todays-match-prediction/index.html">Fantasy Tips</a></li>
+</ul>						</nav>
+					
+					
+					
+											<div id="et_top_search">
+							<span id="et_search_icon"></span>
+						</div>
+					
+					<div id="et_mobile_nav_menu">
+				<div class="mobile_nav closed">
+					<span class="select_page">Select Page</span>
+					<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+				</div>
+			</div>				</div> <!-- #et-top-navigation -->
+			</div> <!-- .container -->
+						<div class="et_search_outer">
+				<div class="container et_search_form_container">
+					<form role="search" method="get" class="et-search-form" action="https://www.my11circle.com/fantasy-sports/">
+					<input type="search" class="et-search-field" placeholder="Search &hellip;" value="" name="s" title="Search for:" />					</form>
+					<span class="et_close_search_field"></span>
+				</div>
+			</div>
+					</header> <!-- #main-header -->
+			<div id="et-main-area">
+	
+<!-- <section class="my11_section my11_section_one">
+	<div class="my11_container">
+
+        <h1 class="my11_player_title">Janneman Malan</h1>
+        <div class="my11_grid justify-content-around">
+            <div class="my11_player_image">
+								<img src="http://www.my11circle.com/fantasy-sports/wp-content/uploads/2022/07/player-icon.png" alt="placeholder">
+				            </div>
+			 <div class="my11_player_content">
+				<div class="my11_player_content_inner">
+					
+                	 <div class="profile my11_grid_3">
+
+                          <p><span>Full Name</span> Janneman Nieuwoudt Malan</p>
+						 <p><span>Born</span> 18/04/1996</p> 
+						 <p><span>Role</span> Batsman</p>
+						 <p><span>BATTING STYLE</span> Right Handed</p>
+						 <p><span>BOWLING STYLE</span> Leg break</p>                    
+                    
+                	</div>
+					
+ 					<div class="yscrollsm">
+						 </div>
+            </div>
+			</div>
+           
+        </div>
+	</div>
+</section> -->
+
+
+<section class="my11_section my11_section_three">
+<div class="my11_container">
+    <h1 class="my11_player_title">Janneman Malan <span class="my11_static_font">Career, Bio & Stats</span></h1>
+		<div class="my11_grid justify-content-around">
+            <div class="custom_one_grid">
+            <div class="my11_player_image">
+				<img src="../../wp-content/uploads/2022/07/player-icon.png" alt="placeholder">
+			</div>
+			 <div class="my11_player_content">
+				<div class="my11_player_content_inner">
+					
+                	 <div class="profile my11_grid_3">
+
+                         
+											 <p><span>Team</span><a href="../../cricket-teams/south-africa/index.html">South Africa</a></p>
+						
+						 <p><span>BATTING STYLE</span>  Right Handed</p>
+						 <p><span>BOWLING STYLE</span>  Leg break</p>
+						 <p><span>Role</span> Batsman</p>
+                	</div>
+           		 </div>
+			</div>
+				
+			
+				
+			<div class="my11_profile_btn my11_desktop">
+				<a class="et_pb_button" href="../../../blog/todays-match-prediction/index.html">Today's Match Preview</a>
+			</div>	
+				
+			<a href="../../../player/login.html#register" class="my11_make_team_btn my11_mobile">Make your team now</a>	
+				
+        </div>
+    <div class="custom_two">
+		<div class="section_table_1">
+		
+				
+<!----------------------------------------------------------------------------->
+
+				
+<div class="et_pb_column  et_pb_column_2  et_pb_css_mix_blend_mode_passthrough et-last-child">
+  <div class="et_pb_module et_pb_text et_pb_text_2  et_pb_text_align_left et_pb_bg_layout_light">
+    <div class="et_pb_text_inner">
+      <div class="tile" id="tile-1">
+        <ul class="nav nav-tabs nav-justified" role="tablist">
+          <div class="slider" style="left: 196.656px; width: 196.656px;"></div>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="testm-tab" data-bs-toggle="tab" onclick="mySelectType('Test')" type="button" role="tab" aria-controls="testm" aria-selected="true"> Test</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="odi-tab" data-bs-toggle="tab" onclick="mySelectType('ODI')" type="button" role="tab" aria-controls="odi" aria-selected="false"> ODI</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="t20wc-tab" data-bs-toggle="tab" onclick="mySelectType('T20I')" type="button" role="tab" aria-controls="t20wc" aria-selected="false"> T20I</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="it20L-tab" data-bs-toggle="tab" onclick="mySelectType('IndianT20')" type="button" role="tab" aria-controls="it20L" aria-selected="false"> Indian T20 </a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="" id="tab_panels" role="tabpanel">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingFive">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">Overall&nbsp; <span class="comp_type"></span>&nbsp;Batting Summary:</button>
+                </h3>
+                <div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <table class="bowling">
+                <tbody>
+                    <tr>
+                      <!--  <th>Year</th>-->
+                        <th>Mat.</th>
+                        <th>Inn.</th>
+                        <th>Runs</th>
+                        <th>Avg.</th>
+                        <th>SR</th>
+                        <th>HS</th>
+                        <th>100s</th>
+                        <th>50s</th>
+<!--                         <th>6s</th>
+                        <th>4s</th> -->
+                    </tr>
+												<tr class="0_Bat Bat" style="display:none;"><td>No Record Found</td></tr>
+													<tr class="1_Bat Bat" style="">
+							<!--	<td>
+									2021								</td>
+							-->	<td>
+									23								</td>
+								<td>
+									22								</td>
+								<td>
+									958								</td>
+								<td>
+									47.90								</td>
+								<td>
+									83.30								</td>
+								<td>
+									177								</td>
+								<td>
+									3								</td>
+								<td>
+									4								</td>
+															</tr>
+													<tr class="2_Bat Bat" style="">
+							<!--	<td>
+									2021								</td>
+							-->	<td>
+									11								</td>
+								<td>
+									11								</td>
+								<td>
+									241								</td>
+								<td>
+									21.90								</td>
+								<td>
+									129.57								</td>
+								<td>
+									55								</td>
+								<td>
+									-								</td>
+								<td>
+									1								</td>
+															</tr>
+													<tr class="3_Bat Bat" style="">
+							<!--	<td>
+									2017								</td>
+							-->	<td>
+									52								</td>
+								<td>
+									88								</td>
+								<td>
+									3780								</td>
+								<td>
+									46.09								</td>
+								<td>
+									60.09								</td>
+								<td>
+									208								</td>
+								<td>
+									13								</td>
+								<td>
+									13								</td>
+															</tr>
+													<tr class="4_Bat Bat" style="">
+							<!--	<td>
+									2016								</td>
+							-->	<td>
+									67								</td>
+								<td>
+									67								</td>
+								<td>
+									2716								</td>
+								<td>
+									43.80								</td>
+								<td>
+									85.84								</td>
+								<td>
+									170								</td>
+								<td>
+									5								</td>
+								<td>
+									19								</td>
+															</tr>
+													<tr class="5_Bat Bat" style="">
+							<!--	<td>
+									2018								</td>
+							-->	<td>
+									67								</td>
+								<td>
+									66								</td>
+								<td>
+									1894								</td>
+								<td>
+									31.04								</td>
+								<td>
+									130.44								</td>
+								<td>
+									128								</td>
+								<td>
+									2								</td>
+								<td>
+									9								</td>
+															</tr>
+													<tr class="6_Bat Bat" style="display:none;"><td>No Record Found</td></tr>
+													<tr class="7_Bat Bat" style="display:none;"><td>No Record Found</td></tr>
+													<tr class="8_Bat Bat" style="display:none;"><td>No Record Found</td></tr>
+													<tr class="9_Bat Bat" style="display:none;"><td>No Record Found</td></tr>
+													<tr class="10_Bat Bat" style="display:none;"><td>No Record Found</td></tr>
+						                </tbody>
+				</table>
+                  </div>
+                  <p></p>
+                </div>
+                <p></p>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"> Overall&nbsp;<span class="comp_type"></span>&nbsp;Bowling Summary: </button>
+                </h3>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <table class="bowling">
+                <tbody>
+                    <tr>
+                       <!-- <th>Year</th>-->
+                        <th>Mat.</th>
+                        <th>Inn.</th>
+                        <th>O</th>
+                        <th>WC</th>
+                        <th>Runs</th>
+                        <th>Eco.</th>
+                        <th>Best B.</th>
+                        <th>5W+</th>
+                    </tr>
+												<tr class="0_Bowl Bowl" style="display:none;"><td>No Record Found</td></tr>
+													<tr class="1_Bowl Bowl" style="display:none;"><td>No Record Found</td></tr>
+													<tr class="2_Bowl Bowl" style="display:none;"><td>No Record Found</td></tr>
+													<tr class="3_Bowl Bowl" style="">
+								<!--<td>
+									2023								</td>-->
+								<td>
+									52								</td>
+								<td>
+									5								</td>
+								<td>
+									15								</td>
+								<td>
+									1								</td>
+								<td>
+									51								</td>
+								<td>
+									3.40								</td>
+								<td>
+									1/5								</td>
+								<td>
+									-								</td>
+							</tr>
+													<tr class="4_Bowl Bowl" style="display:none;"><td>No Record Found</td></tr>
+													<tr class="5_Bowl Bowl" style="display:none;"><td>No Record Found</td></tr>
+													<tr class="6_Bowl Bowl" style="display:none;"><td>No Record Found</td></tr>
+													<tr class="7_Bowl Bowl" style="display:none;"><td>No Record Found</td></tr>
+													<tr class="8_Bowl Bowl" style="display:none;"><td>No Record Found</td></tr>
+													<tr class="9_Bowl Bowl" style="display:none;"><td>No Record Found</td></tr>
+													<tr class="10_Bowl Bowl" style="display:none;"><td>No Record Found</td></tr>
+						                </tbody>
+				</table>
+                  </div>
+                  <p></p>
+                </div>
+                <p></p>
+              </div>
+				
+				<div class="accordion-item">
+                <h3 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour"> Last 5&nbsp;<span class="comp_type"></span>&nbsp;Matches Performance: </button>
+                </h3>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <table class="bowling">
+                <tbody>
+                    <tr>
+                        <th>Runs Scored</th>
+                        <th>Bowling Figures</th>
+                        <th>Opposition</th>
+                        <th>Match Date</th>
+                    </tr>
+												<tr class="0_last5perform last5perform" style="display:none;"><td>No Record Found</td></tr>
+													<tr class="1_last5perform last5perform" style="display:none;">
+								<td>
+									15(27)								</td>
+								<td>
+									-								</td>
+								<td>
+									India								</td>
+								<td>
+									11/10/2022								</td>
+							</tr>
+													<tr class="1_last5perform last5perform" style="display:none;">
+								<td>
+									25(31)								</td>
+								<td>
+									-								</td>
+								<td>
+									India								</td>
+								<td>
+									09/10/2022								</td>
+							</tr>
+													<tr class="1_last5perform last5perform" style="display:none;">
+								<td>
+									22(42)								</td>
+								<td>
+									-								</td>
+								<td>
+									India								</td>
+								<td>
+									06/10/2022								</td>
+							</tr>
+													<tr class="1_last5perform last5perform" style="display:none;">
+								<td>
+									11(18)								</td>
+								<td>
+									-								</td>
+								<td>
+									England								</td>
+								<td>
+									24/07/2022								</td>
+							</tr>
+													<tr class="1_last5perform last5perform" style="display:none;">
+								<td>
+									-								</td>
+								<td>
+									-								</td>
+								<td>
+									England								</td>
+								<td>
+									22/07/2022								</td>
+							</tr>
+													<tr class="2_last5perform last5perform" style="display:none;">
+								<td>
+									-								</td>
+								<td>
+									-								</td>
+								<td>
+									Ireland								</td>
+								<td>
+									22/07/2021								</td>
+							</tr>
+													<tr class="2_last5perform last5perform" style="display:none;">
+								<td>
+									4(5)								</td>
+								<td>
+									-								</td>
+								<td>
+									Ireland								</td>
+								<td>
+									19/07/2021								</td>
+							</tr>
+													<tr class="2_last5perform last5perform" style="display:none;">
+								<td>
+									33(28)								</td>
+								<td>
+									-								</td>
+								<td>
+									Pakistan								</td>
+								<td>
+									16/04/2021								</td>
+							</tr>
+													<tr class="2_last5perform last5perform" style="display:none;">
+								<td>
+									55(40)								</td>
+								<td>
+									-								</td>
+								<td>
+									Pakistan								</td>
+								<td>
+									14/04/2021								</td>
+							</tr>
+													<tr class="2_last5perform last5perform" style="display:none;">
+								<td>
+									15(10)								</td>
+								<td>
+									-								</td>
+								<td>
+									Pakistan								</td>
+								<td>
+									12/04/2021								</td>
+							</tr>
+													<tr class="3_last5perform last5perform" style="display:none;">
+								<td>
+									2(9)								</td>
+								<td>
+									-								</td>
+								<td>
+									Knights								</td>
+								<td>
+									12/03/2023								</td>
+							</tr>
+													<tr class="3_last5perform last5perform" style="display:none;">
+								<td>
+									-								</td>
+								<td>
+									-								</td>
+								<td>
+									DP World Lions								</td>
+								<td>
+									05/03/2023								</td>
+							</tr>
+													<tr class="3_last5perform last5perform" style="display:none;">
+								<td>
+									82(238)								</td>
+								<td>
+									1/5								</td>
+								<td>
+									North West Dragons								</td>
+								<td>
+									12/02/2023								</td>
+							</tr>
+													<tr class="3_last5perform last5perform" style="display:none;">
+								<td>
+									1(9)								</td>
+								<td>
+									-								</td>
+								<td>
+									Dolphins								</td>
+								<td>
+									24/11/2022								</td>
+							</tr>
+													<tr class="3_last5perform last5perform" style="display:none;">
+								<td>
+									22(60)								</td>
+								<td>
+									-								</td>
+								<td>
+									Western Province								</td>
+								<td>
+									17/11/2022								</td>
+							</tr>
+													<tr class="4_last5perform last5perform" style="display:none;">
+								<td>
+									1(4)								</td>
+								<td>
+									-								</td>
+								<td>
+									Western Province								</td>
+								<td>
+									23/12/2022								</td>
+							</tr>
+													<tr class="4_last5perform last5perform" style="display:none;">
+								<td>
+									-								</td>
+								<td>
+									-								</td>
+								<td>
+									North West Dragons								</td>
+								<td>
+									21/12/2022								</td>
+							</tr>
+													<tr class="4_last5perform last5perform" style="display:none;">
+								<td>
+									58(58)								</td>
+								<td>
+									-								</td>
+								<td>
+									Warriors								</td>
+								<td>
+									18/12/2022								</td>
+							</tr>
+													<tr class="4_last5perform last5perform" style="display:none;">
+								<td>
+									88(110)								</td>
+								<td>
+									-								</td>
+								<td>
+									Knights								</td>
+								<td>
+									14/12/2022								</td>
+							</tr>
+													<tr class="4_last5perform last5perform" style="display:none;">
+								<td>
+									1(5)								</td>
+								<td>
+									-								</td>
+								<td>
+									DP World Lions								</td>
+								<td>
+									11/12/2022								</td>
+							</tr>
+													<tr class="5_last5perform last5perform" style="display:none;">
+								<td>
+									16(21)								</td>
+								<td>
+									-								</td>
+								<td>
+									MI Cape Town								</td>
+								<td>
+									14/01/2023								</td>
+							</tr>
+													<tr class="5_last5perform last5perform" style="display:none;">
+								<td>
+									2(4)								</td>
+								<td>
+									-								</td>
+								<td>
+									Paarl Royals								</td>
+								<td>
+									13/01/2023								</td>
+							</tr>
+													<tr class="5_last5perform last5perform" style="display:none;">
+								<td>
+									5(12)								</td>
+								<td>
+									-								</td>
+								<td>
+									Durban's Super Giants								</td>
+								<td>
+									11/01/2023								</td>
+							</tr>
+													<tr class="5_last5perform last5perform" style="display:none;">
+								<td>
+									37(39)								</td>
+								<td>
+									-								</td>
+								<td>
+									Dolphins								</td>
+								<td>
+									02/11/2022								</td>
+							</tr>
+													<tr class="5_last5perform last5perform" style="display:none;">
+								<td>
+									-								</td>
+								<td>
+									-								</td>
+								<td>
+									DP World Lions								</td>
+								<td>
+									01/11/2022								</td>
+							</tr>
+													<tr class="6_last5perform last5perform" style="display:none;"><td>No Record Found</td></tr>
+													<tr class="7_last5perform last5perform" style="display:none;"><td>No Record Found</td></tr>
+													<tr class="8_last5perform last5perform" style="display:none;"><td>No Record Found</td></tr>
+													<tr class="9_last5perform last5perform" style="display:none;"><td>No Record Found</td></tr>
+													<tr class="10_last5perform last5perform" style="display:none;"><td>No Record Found</td></tr>
+						                </tbody>
+				</table>
+                  </div>
+                  <p></p>
+                </div>
+                <p></p>
+				</div>
+              
+            </div>
+            <p></p>
+          </div>
+        </div> 
+		</div>
+	  </div>
+	</div>
+</div>
+				
+	<div class="my11_make_team">
+	<a href="../../../player/login.html#register" class="my11_make_team_btn my11_desktop">Make your team now</a>
+	<div class="my11_profile_btn my11_mobile">
+				<a class="et_pb_button" href="../../../blog/todays-match-prediction/index.html">Today's Match Preview</a>
+			</div>		
+			</div>			
+<!----------------------------------------------------------------------------->				
+				
+				
+		
+</div> <!--end custom 2 -->
+			
+			
+			
+  </div>      <!--end my 11 grid -->
+		
+	
+	
+	</div>  <!--end container -->
+	</div>
+</section>
+<div class="et_pb_section et_pb_section_1 et_pb_with_background et_section_regular">
+				
+					<div class="my11_bottom_image my11_desktop">
+						<img src="../../wp-content/uploads/2022/08/trace-hold.jpg">
+					</div>
+	
+					<div class="my11_bottom_image my11_mobile">
+						<img src="../../wp-content/uploads/2022/08/trace-hold-mob.jpg">
+					</div>	
+				
+				
+					
+				
+				
+			</div>
+
+<!--<section class="my11_section my11_section_bottom">
+	<div class="my11_container my11_mcontainer_100">
+		<div class="my11_bottom_content">
+			<h2 class="my11_bottom_title">
+				T20 World Cup Cricket Match Fantasy <br>Tips & Predictions
+			</h2>
+			
+			<p class="my_bottom_desc">
+				Our T20 World Cup 2022 predictions will help you make team combinations, employ captains, pick a bowling arsenal, among other factors.
+			</p>
+		</div>
+		
+		<div class="my11_predict">
+			<a href="https://www.my11circle.com/blog/todays-match-prediction/" target="_blank" class="my11_predict_btn">Read Today's Match Predictions NOW!</a>
+		</div>
+	</div>
+</section>
+-->
+	
+<script>
+	$(".0_last5perform").show();
+	$(".0_Bat").show();
+	$(".0_Bowl").show();
+	$(".0_HomeAwayBowl").show();
+	mySelectType('test');
+// 	$("#comp_type_last5perform").change(function(){
+// 		$(".last5perform").hide();
+// 		$(".Bat").hide();
+// 		$(".Bowl").hide();
+// 		$(".HomeAwayBowl").hide();
+// 		var value = $("#comp_type_last5perform")[0].value;
+// 		$("."+value+"_last5perform").show();
+// 		$("."+value+"_Bat").show();
+// 		$("."+value+"_Bowl").show();
+// 		$("."+value+"_HomeAwayBowl").show();
+// 	});
+	
+
+jQuery('td:contains("Royal Challengers Bangalore")').text('Bangalore');
+jQuery('td:contains("Chennai Super Kings")').text('Chennai');
+jQuery('td:contains("Delhi Capitals")').text('Delhi');
+jQuery('td:contains("Gujarat Titans")').text('Gujarat');
+jQuery('td:contains("Sunrisers Hyderabad")').text('Hyderabad');
+jQuery('td:contains("Kolkata Knight Riders")').text('Kolkata');
+jQuery('td:contains("Lucknow Super Giants")').text('Lucknow');
+jQuery('td:contains("Mumbai Indians")').text('Mumbai');
+jQuery('td:contains("Punjab Kings")').text('Punjab');
+jQuery('td:contains("Rajasthan Royals")').text('Rajasthan');
+
+
+	
+</script>
+<style>
+	.comp_type {text-transform: capitalize;}
+</style>
+
+			<footer id="main-footer">
+				
+<div class="container">
+	<div id="footer-widgets" class="clearfix">
+		<div class="footer-widget"><div id="block-10" class="fwidget et_pb_widget widget_block"><center>
+<div><img src="../../wp-content/uploads/2022/09/MEC-logo.png" alt="My 11 Circle"></div>
+<div style="margin:80px 0;"></div>
+<h4>Stay Connected</h4>
+<div class="social-icon">
+<a href="https://www.facebook.com/My11Circle/"><img src="../../wp-content/uploads/2022/03/facebook-icon.png" alt="Facebook"></a> <a href="https://twitter.com/My11Circle"><img src="../../wp-content/uploads/2022/03/twitter-icon.png" alt="Twitter"></a> <a href="https://www.instagram.com/my11circle/"><img src="../../wp-content/uploads/2022/03/instagram-icon.png" alt="Instagram"></a> <a href="https://www.linkedin.com/showcase/my11circle/"><img src="../../wp-content/uploads/2022/03/linkedin-icon.png" alt="Linkedin"></a>
+</div>
+</center></div></div><div class="footer-widget"><div id="nav_menu-5" class="fwidget et_pb_widget widget_nav_menu"><h4 class="title">Quick Links:</h4><div class="menu-footer-menu-1-container"><ul id="menu-footer-menu-1" class="menu"><li id="menu-item-7254" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7254"><a href="../../tournaments/indian-t20-league/index.html">Indian T20 League</a></li>
+<li id="menu-item-3877" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3877"><a href="../../../index.html">Fantasy Cricket</a></li>
+<li id="menu-item-3878" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3878"><a href="../../cricket-teams/index.html">Cricket Teams</a></li>
+<li id="menu-item-3879" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3879"><a href="../../../blog/todays-match-prediction/index.html">Today&#8217;s Match Prediction</a></li>
+<li id="menu-item-4885" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4885"><a href="../../upcoming-matches/index.html">Upcoming Matches</a></li>
+</ul></div></div></div><div class="footer-widget"><div id="block-7" class="fwidget et_pb_widget widget_block"></div><div id="nav_menu-7" class="fwidget et_pb_widget widget_nav_menu"><h4 class="title">&nbsp;</h4><div class="menu-footer-menu-2-container"><ul id="menu-footer-menu-2" class="menu"><li id="menu-item-3880" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3880"><a href="https://www.my11circle.com:443/">Download Fantasy Cricket App</a></li>
+<li id="menu-item-3881" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3881"><a href="../../../how-to-play.html">How to Play Fantasy Cricket</a></li>
+<li id="menu-item-3882" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3882"><a href="../../../tips-tricks.html">Fantasy Cricket Tips &#038; Tricks</a></li>
+<li id="menu-item-3389" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3389"><a href="../../../blog/index.html">Fantasy Cricket Blog</a></li>
+<li id="menu-item-3883" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3883"><a href="../../../legality.html">Legality</a></li>
+</ul></div></div></div><div class="footer-widget"><div id="block-8" class="fwidget et_pb_widget widget_block"><center>
+<h4>Write to us</h4>
+<div style="font-size:125%;"><a href="mailto:support@my11circle.com" alt="Email Us">support@my11circle.com</a></div>
+<hr style="width:32%; height:1px;border-width:0;color:#666;background-color:#666; margin:15px 5px;">
+<h4>Payment Partner</h4>
+<p><img src="../../wp-content/uploads/2022/03/payment-partner-1.png" alt="Payment Partner"></p>
+</center></div></div>	</div>
+</div>
+
+
+		
+				<div id="footer-bottom">
+					<div class="container clearfix">
+				<ul class="et-social-icons">
+
+	<li class="et-social-icon et-social-facebook">
+		<a href="#" class="icon">
+			<span>Facebook</span>
+		</a>
+	</li>
+	<li class="et-social-icon et-social-twitter">
+		<a href="#" class="icon">
+			<span>Twitter</span>
+		</a>
+	</li>
+	<li class="et-social-icon et-social-instagram">
+		<a href="#" class="icon">
+			<span>Instagram</span>
+		</a>
+	</li>
+	<li class="et-social-icon et-social-rss">
+		<a href="../../feed/index.html" class="icon">
+			<span>RSS</span>
+		</a>
+	</li>
+
+</ul><div id="footer-info">© 2023 Play Games24x7 Pvt. Ltd. All Rights Reserved.</div>					</div>
+				</div>
+			</footer>
+		</div>
+
+
+	</div>
+
+	<style id="et-builder-googlefonts-inline">/* Original: https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic&#038;subset=latin,latin-ext&#038;display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Roboto';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOiCnqEu92Fr1Mu51QrEz4dKg.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TjASc0CsE.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu51xGIzc.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51S7ACc0CsE.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TzBic0CsE.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TLBCc0CsE.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1MmgVxGIzc.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fChc9.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7GxP.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fChc9.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfChc9.ttf) format('truetype');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtfChc9.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Roboto';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOiCnqEu92Fr1Mu51QrEz4dKQ.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TjASc0CsI.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu51xGIzQ.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51S7ACc0CsI.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TzBic0CsI.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TLBCc0CsI.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1MmgVxGIzQ.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fChc-.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7GxM.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fChc-.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfChc-.woff) format('woff');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtfChc-.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Roboto';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOiCnqEu92Fr1Mu51QrEz4dLw.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TjASc0CsQ.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu51xGIzI.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51S7ACc0CsQ.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TzBic0CsQ.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TLBCc0CsQ.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1MmgVxGIzI.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fChc4.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7GxK.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fChc4.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfChc4.woff2) format('woff2');}@font-face {font-family: 'Roboto';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtfChc4.woff2) format('woff2');}</style><script type='text/javascript' src='../../wp-content/plugins/responsive-slick-slider/public/js/jquery.vimeo.api7359.js?ver=1.2.0' id='vimeo-js'></script>
+<script type='text/javascript' id='divi-custom-script-js-extra'>
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_builder_utils_params = {"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};
+var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
+var et_pb_custom = {"ajaxurl":"https:\/\/www.my11circle.com\/fantasy-sports\/wp-admin\/admin-ajax.php","images_uri":"https:\/\/www.my11circle.com\/fantasy-sports\/wp-content\/themes\/Divi\/images","builder_images_uri":"https:\/\/www.my11circle.com\/fantasy-sports\/wp-content\/themes\/Divi\/includes\/builder\/images","et_frontend_nonce":"3d1ee00454","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"ebc890bde5","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","wrong_checkbox":"Checkbox","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"6713","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"yes","is_shortcode_tracking":"","tinymce_uri":""};
+var et_pb_box_shadow_elements = [];
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/themes/Divi/js/scripts.minba88.js?ver=4.14.5' id='divi-custom-script-js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/schema-and-structured-data-for-wp/modules/divi-builder/scripts/frontend-bundle.min8a54.js?ver=1.0.0' id='extension-frontend-bundle-js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/wpdatatables/integrations/page_builders/divi-wpdt/scripts/frontend-bundle.min8a54.js?ver=1.0.0' id='divi-wpdt-frontend-bundle-js'></script>
+<script type='text/javascript' src='../../wp-content/themes/Divi/core/admin/js/commonba88.js?ver=4.14.5' id='et-core-common-js'></script>
+<script type='text/javascript' src='../../wp-includes/js/wp-embed.min6281.js?ver=5.8.6' id='wp-embed-js'></script>
+</body>
+<link href="../../../../cdn.jsdelivr.net/npm/bootstrap%405.2.0/dist/css/bootstrap.min.css" rel="stylesheet" >
+<script src="../../../../cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="../../../../cdn.jsdelivr.net/npm/bootstrap%405.2.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../../../owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
+
+<script>
+jQuery(function() {
+    var header = jQuery(".header");
+    jQuery(window).scroll(function() {    
+        var scroll = jQuery(window).scrollTop();
+    
+        if (scroll >= 300 ) {
+            header.addClass("scrollheader");
+			jQuery("#InterLinkMenu").addClass("stickey-menu"); 
+// 			has-sticky
+        } else {
+            header.removeClass("scrollheader");
+			jQuery("#InterLinkMenu").removeClass("stickey-menu");
+        } 
+    });
+}); //missing );
+	
+	
+jQuery(".show-more").click(function () {
+        if(jQuery(".text").hasClass("show-more-height")) {
+            jQuery(this).text("(Show Less)");
+        } else {
+            jQuery(this).text("(Show More)");
+        }
+
+        jQuery(".text").toggleClass("show-more-height");
+    });
+	
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+</script>
+<script>
+
+jQuery("#tile-1 .nav-tabs a").click(function() {
+  var position = jQuery(this).parent().position();
+  var width = jQuery(this).parent().width();
+    jQuery("#tile-1 .slider").css({"left":+ position.left,"width":width});
+});
+var actWidth = jQuery("#tile-1 .nav-tabs").find(".active").parent("li").width();
+var actPosition = jQuery("#tile-1 .nav-tabs .active").position();
+jQuery("#tile-1 .slider").css({"left":+ actPosition.left,"width": actWidth});
+
+jQuery("#tile-2 .nav-tabs a").click(function() {
+  var position = jQuery(this).parent().position();
+  var width = jQuery(this).parent().width();
+    jQuery("#tile-2 .slider").css({"left":+ position.left,"width":width});
+});
+var actWidth = jQuery("#tile-2 .nav-tabs").find(".active").parent("li").width();
+var actPosition = jQuery("#tile-2 .nav-tabs .active").position();
+jQuery("#tile-2 .slider").css({"left":+ actPosition.left,"width": actWidth});
+
+jQuery("#tile-3 .nav-tabs a").click(function() {
+  var position = jQuery(this).parent().position();
+  var width = jQuery(this).parent().width();
+    jQuery("#tile-3 .slider").css({"left":+ position.left,"width":width});
+});
+var actWidth = jQuery("#tile-3 .nav-tabs").find(".active").parent("li").width();
+var actPosition = jQuery("#tile-3 .nav-tabs .active").position();
+jQuery("#tile-3 .slider").css({"left":+ actPosition.left,"width": actWidth});
+
+jQuery("#tile-4 .nav-tabs a").click(function() {
+  var position = jQuery(this).parent().position();
+  var width = jQuery(this).parent().width();
+    jQuery("#tile-4 .slider").css({"left":+ position.left,"width":width});
+});
+var actWidth = jQuery("#tile-4 .nav-tabs").find(".active").parent("li").width();
+var actPosition = jQuery("#tile-4 .nav-tabs .active").position();
+jQuery("#tile-4 .slider").css({"left":+ actPosition.left,"width": actWidth});
+
+jQuery("#tile-5 .nav-tabs a").click(function() {
+  var position = jQuery(this).parent().position();
+  var width = jQuery(this).parent().width();
+    jQuery("#tile-5 .slider").css({"left":+ position.left,"width":width});
+});
+var actWidth = jQuery("#tile-5 .nav-tabs").find(".active").parent("li").width();
+var actPosition = jQuery("#tile-5 .nav-tabs .active").position();
+jQuery("#tile-5 .slider").css({"left":+ actPosition.left,"width": actWidth});
+	
+</script> 
+
+<script type="text/javascript">
+	function changeBtab1() {
+                document.getElementById('Btab1').className = "tab-pane fade active show";
+		document.getElementById('Btab2').className = "tab-pane fade";
+		document.getElementById('Btab3').className = "tab-pane fade";
+		document.getElementById('Btab4').className = "tab-pane fade"; 
+        }
+	function changeBtab2() {
+                document.getElementById('Btab1').className = "tab-pane fade";
+		document.getElementById('Btab2').className = "tab-pane fade active show";
+		document.getElementById('Btab3').className = "tab-pane fade";
+		document.getElementById('Btab4').className = "tab-pane fade"; 
+        }
+	function changeBtab3() {
+                document.getElementById('Btab1').className = "tab-pane fade";
+		document.getElementById('Btab2').className = "tab-pane fade";
+		document.getElementById('Btab3').className = "tab-pane fade active show";
+		document.getElementById('Btab4').className = "tab-pane fade"; 
+        }
+	function changeBtab4() {
+                document.getElementById('Btab1').className = "tab-pane fade";
+		document.getElementById('Btab2').className = "tab-pane fade";
+		document.getElementById('Btab3').className = "tab-pane fade";
+		document.getElementById('Btab4').className = "tab-pane fade active show"; 
+        }
+</script>
+
+<script>
+
+jQuery(".winners_slider").owlCarousel({autoplay:!0,autoplayTimeout:4e3,center:!0,loop:!0,dots:!0,nav:!0,items:3,stagePadding:30,responsive:{0:{items:1,stagePadding:40},480:{items:2,stagePadding:0},1600:{items:3,stagePadding:30}}})
+
+</script>
+
+<!-- Footer Downlaod CTA -->
+<style type="text/css">
+.header-CTA 
+    {
+        display: none;
+    }
+.header-CTA a:hover, .header-CTA a:focus, .header-CTA a:active
+	{
+		-webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+		outline: none !important;
+	}
+@media screen and (max-device-width: 900px) {
+    /*testing css*/
+    body{
+        margin: 0;
+        padding: 0;
+		padding-bottom:120px;
+    }
+	.header-CTA sup
+	{
+	top: -0.5em;
+    font-size: 75%;
+	}
+    /*testing css end*/
+    .header-CTA {
+        position: fixed;
+        bottom: 0;
+        z-index: 9;
+        background-color: #000;
+        border-radius: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        text-align: center;
+        width: 100%;
+        font-family: calibri,sans-serif;
+        line-height: initial;
+        display: block;
+    }
+    .bonusTxt {
+        padding-bottom: 0.5%;
+        font-size: 18px;
+        padding-top: 0.5%;
+        color: #fff;
+        display: block;
+    }
+    .bonusTxt span{
+        font-size: 26px;
+        font-weight: 700;
+        color: #ff9600;
+    }
+    .terms {
+        color: #989898;
+        font-size: .8em;
+        text-decoration: none;
+        display: block;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        text-align: right;
+    }
+    .btn-green{
+        display: inline-block;
+        width: 48.2%;
+    }
+    .btn-green img{
+        max-width: 86.3%;
+        height: auto;
+    }
+}
+@media screen and (max-width: 900px) and (orientation: landscape) {
+	body{
+		padding-bottom:70px;
+    }
+    .bonusTxt{
+        display: inline-block;
+        vertical-align: middle;
+        padding-top: 0%;
+        padding-bottom: 0%;
+    }
+    .btn-green{
+        width: 23%;
+        margin-top: 1%;
+        margin-bottom: 0.4%;
+        vertical-align: middle;
+    }
+    .btn-green img{
+        max-width: 90%;
+    }
+    .terms{
+        display: inline-block;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        vertical-align: middle;
+        margin-top: 0;
+    }
+}	
+</style>
+
+<div class="header-CTA header-CTA-launch">
+<div class="mrc_downloadlp">
+    <div id="supported">
+        <div class="adw-supported">
+            <span class="bonusTxt">Get <span>₹1500</span><sup>*</sup> Bonus</span>
+            <a id="mobile-android-button" class="btn-green" href="https://nae.my11circle.com/download?utm_source=m1c_t20league_android&amp;utm_medium=organic"><img src="../../../../rcmg.in/fantasy/landingimg/acquistion/blog-assets/download-cta-btn.png" width="304" height="91"></a><a id="mobile-ios-button" class="btn-green" href="https://my11circle.app.link/ios-app?utm_source=m1c_t20league_ios&amp;utm_medium=organic"><img src="../../../../rcmg.in/fantasy/landingimg/acquistion/blog-assets/ios-download-cta-btn.png" width="304" height="91"></a>
+            <a class="terms" href="../../../static/overlay/acquisition/terms/welcomebonus-tnc.html" target="_blank" id="mobile-footer-terms-n-conditions" title="Terms &amp; Conditions">*T&amp;C</a>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- /Footer Downlaod CTA -->
+
+
+
+
+<!-- Mirrored from www.my11circle.com/fantasy-sports/players/janneman-malan/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Apr 2023 17:22:43 GMT -->
+</html>

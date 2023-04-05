@@ -1,0 +1,23 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.my11circle.com	TRUE	/blog/wp-content/plugins	FALSE	1999999999	wordpress_c09614156d43dcc08c6c41b83f973188	+
+www.my11circle.com	TRUE	/blog/wp-content/plugins	FALSE	1999999999	wordpress_sec_c09614156d43dcc08c6c41b83f973188	+
+www.my11circle.com	TRUE	/blog/wp-admin	FALSE	1999999999	wordpress_c09614156d43dcc08c6c41b83f973188	+
+www.my11circle.com	TRUE	/blog/wp-admin	FALSE	1999999999	wordpress_sec_c09614156d43dcc08c6c41b83f973188	+
+www.my11circle.com	TRUE	/blog/	FALSE	1999999999	wordpress_logged_in_c09614156d43dcc08c6c41b83f973188	+
+www.my11circle.com	TRUE	/blog/	FALSE	1999999999	wp-settings-0	+
+www.my11circle.com	TRUE	/blog/	FALSE	1999999999	wp-settings-time-0	+
+www.my11circle.com	TRUE	/blog/	FALSE	1999999999	wordpress_c09614156d43dcc08c6c41b83f973188	+
+www.my11circle.com	TRUE	/blog/	FALSE	1999999999	wordpress_sec_c09614156d43dcc08c6c41b83f973188	+
+www.my11circle.com	TRUE	/blog/	FALSE	1999999999	wordpressuser_c09614156d43dcc08c6c41b83f973188	+
+www.my11circle.com	TRUE	/blog/	FALSE	1999999999	wordpresspass_c09614156d43dcc08c6c41b83f973188	+
+www.my11circle.com	TRUE	/blog/	FALSE	1999999999	wp-postpass_c09614156d43dcc08c6c41b83f973188	+
+www.my11circle.com	TRUE	/blog/	FALSE	1999999999	wordpress_test_cookie	WP+Cookie+check
+.my11circle.com	TRUE	/	FALSE	1999999999	sameSiteNoneSupported	true
+.my11circle.com	TRUE	/	FALSE	1999999999	device.info.cookie	{"bv":"false","bn":"false","osv":"98","osn":"Windows","tbl":"false","vnd":"false","mdl":"false"}
+.my11circle.com	TRUE	/	FALSE	1999999999	ga24x7_pixeltracker	utm_source%3Dcricketseries%26utm_medium%3Dregbtn2%26utm_content%3Dmomentum-one-day-cup.html%26from_page%3DScotland-tri-series-2019-fantasy-cricket.html%26referrer_url%3Dhttp%253A%252F%252Fwww.my11circle.com%252Fscotland-tri-series-2019-fantasy-cricket.html
+.my11circle.com	TRUE	/	FALSE	1999999999	NA_VISITOR	19045456-d5db-48dd-9503-48816c9b4777
+www.my11circle.com	TRUE	/	FALSE	1999999999	SameSite	None
+.my11circle.com	TRUE	/	FALSE	1999999999	SSID	SSID03973659-20de-4f53-9fab-30e41fd153b2
+www.my11circle.com	TRUE	/	FALSE	1999999999	SameSite	None
+
